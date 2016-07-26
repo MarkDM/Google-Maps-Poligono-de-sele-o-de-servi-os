@@ -1,0 +1,52 @@
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.coordenadas {
+	height: 30px;
+	margin: 10px;
+	width: 100%;
+	display: inline-block;
+	/*margin-left: calc(50% - 200px);*/
+}
+label {
+	margin-left: 15px;
+}
+#map-canvas {
+	height: 80%;
+	width: 80%;
+	border: 1px solid #7d7b7b;
+	margin: auto;
+}
+#iw_container .iw_title {
+	font-size: 16px;
+	font-weight: bold;
+}
+.iw_content {
+	padding: 15px 15px 15px 0;
+}
+
+
+#serNoPoligono,#serSelecionado {
+	border: 1px solid #7d7b7b;
+    color: black;
+    padding: 5px;
+    
+}
+
+#snpContainer,#ssContainer {
+
+	width: 300px;
+	float: left;
+	padding: 20px
+}
+
+#gContainer {
+
+	margin-left: calc(50% - 300px)
+}
+
