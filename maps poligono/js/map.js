@@ -7,7 +7,7 @@ var polsArray = [];
 var infowindowArray = [];
 var pol = false;
 var serSelecionadosArray = [];
-// var modServico = false;
+
 var polygon;
 
 //Objetos json
@@ -45,10 +45,6 @@ function initialize() {
       limparInfoWindow()
       return;
     }
-
-
-      // O evento "click" retorna a posição do click no mapa,
-      // através dos métodos latLng.lat() e latLng.lng().
 
       // Passamos as respectivas coordenadas para as variáveis lat e lng
       // para posterior referência.
@@ -99,17 +95,6 @@ function createMarker(lat, lng) {
 
 
    google.maps.event.addListener(marker, 'drag', function() {
-      
-      // Actualiza as coordenadas de posição do marcador no mapa
-       //marker.position = this.getPosition();
-
-      // Redefine as variáveis lat e lng para actualizar
-      // os valores das caixas de texto no topo
-      //var lat = marker.position.lat().toFixed(6);
-     // var lng = marker.position.lng().toFixed(6);
-
-      // Chamada da função que actualiza os valores das caixas de texto
-      //getCoords(lat, lng);
 
       if (pol) {
 
@@ -167,9 +152,6 @@ function createService(lat, lng){
    //joga os pontos de servicos num array
    servicosMarker.push(service);
 
-
-
-
 //Desaloca um serviço
 google.maps.event.addListener(service,'dblclick',function(){
 
@@ -207,7 +189,6 @@ google.maps.event.addDomListener(service,'click',function(){
             servicosMarker[posSM].setIcon('service_.png');
             
          }
-        
 
         mostrarSelecionados();
 
@@ -387,7 +368,6 @@ function modServicos(){
     modServico = true;
     document.getElementById("info").innerHTML = "Modo de Serviço";
   }
- 
   
 }
 
@@ -410,7 +390,6 @@ function limparInfoWindow() {
     infowindowArray[i].close();
    }
   }
-
   
 }
 
@@ -432,9 +411,7 @@ function servicosNoPoligono() {
 
             if (posSS == - 1) {
               serNoPoligono.push(servicos[i]);
-            }
-                     
-            
+            }                  
 
           }
       }
@@ -451,7 +428,6 @@ function servicosNoPoligono() {
             a.innerHTML = temp;         
 
       }
-
       
 }
 
@@ -483,7 +459,6 @@ function carregaServicos() {
      $.getJSON(url, function(json) {
 
 
-
       for (var i = 0; i < json.length; i++) {
 
         servicos[i] = json[i];
@@ -491,8 +466,6 @@ function carregaServicos() {
         createService(servicos[i].lat,servicos[i].lng);
         
       }
-
-
 
      });
 }
@@ -514,7 +487,7 @@ function polMudaIconeServicos() {
               
             }
            
-          }
+      }
 }
 
 
